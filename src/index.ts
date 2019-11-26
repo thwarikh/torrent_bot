@@ -36,7 +36,7 @@ function setEventCallback(regexp: RegExp, regexpNoName: RegExp,
 setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.start, (msg) => {
   if (msgTools.isAuthorized(msg) < 0) {
     // msgTools.sendUnauthorizedMessage(bot, msg);
-    msgTools.sendMessage(bot, msg, 'Bot is not usable outside @kltorrent group', -1);
+    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent Group.\n\nYou are not Authorized to use this bot Personaly 🚫\n\nVisit https://t.me/kl_projects for more updates.', -1);
   } else {
     msgTools.sendMessage(bot, msg,
                          'Welcome to @kltorrent Group.\n\nVisit https://t.me/kl_projects for more updates.',
