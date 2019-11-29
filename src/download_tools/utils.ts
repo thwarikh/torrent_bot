@@ -74,6 +74,13 @@ function getSingleStatus(dlDetails: details.DlVars, msg?: TelegramBot.Message): 
     }
   });
 }
+function getUsername(msg: TelegramBot.Message): string {
+  if (msg.from.username) {
+    return `@${msg.from.username}`;
+  } else {
+    return `<a href="tg://user?id=${msg.from.id}">${msg.from.first_name}</a>`;
+  }
+}
 
 interface StatusAll {
   message: string;
@@ -145,8 +152,9 @@ export function generateStatusMessage(totalLength: number, completedLength: numb
   var progressString = generateProgress(progress);
   var speedStr = formatSize(speed);
   var eta = downloadETA(totalLength, completedLength, speed);
+  var user = getUsername();
   var type = isUploading ? '📤 Uploading' : '📥 Downloading';
-  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Size</b>: <code>${totalLengthStr}</code> | <b>Speed</b>: <code>${speedStr}ps</code> | <b>ETA</b>: <code>${eta}</code>\n<b>Seed By</b>:`;
+  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Size</b>: <code>${totalLengthStr}</code> | <b>Speed</b>: <code>${speedStr}ps</code> | <b>ETA</b>: <code>${eta}</code>\n<b>Seed By</b>:${user}`;
   var status = {
     message: message,
     filename: fileName,
