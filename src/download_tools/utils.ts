@@ -73,6 +73,7 @@ function getSingleStatus(dlDetails: details.DlVars, msg?: TelegramBot.Message): 
       resolve({ message: `You aren't authorized to use this bot here.` });
     }
   });
+}
 
 interface StatusAll {
   message: string;
@@ -144,9 +145,8 @@ export function generateStatusMessage(totalLength: number, completedLength: numb
   var progressString = generateProgress(progress);
   var speedStr = formatSize(speed);
   var eta = downloadETA(totalLength, completedLength, speed);
-  var user = details(tgUsername);
-  var type = isUploading ? '📤 Uploading' : '📥 Downloading';
-  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Size</b>: <code>${totalLengthStr}</code> | <b>Speed</b>: <code>${speedStr}ps</code> | <b>ETA</b>: <code>${eta}</code>\n<b>Seed By</b>:${user}`;
+  var type = isUploading ? 'Uploading' : 'Filename';
+  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Size</b>: <code>${totalLengthStr}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Speed</b>: <code>${speedStr}ps</code>\n<b>ETA</b>: <code>${eta}</code>`;
   var status = {
     message: message,
     filename: fileName,
