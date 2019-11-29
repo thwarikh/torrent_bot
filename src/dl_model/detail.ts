@@ -7,7 +7,7 @@ export class DlVars {
   isDownloadAllowed: number;
   isDownloading: boolean;
   gid: string;
-  tgUsername: string;
+  readonly tgUsername: string;
   readonly tgFromId: number;
   readonly tgRepliedUsername: string;
   readonly tgChatId: number;
