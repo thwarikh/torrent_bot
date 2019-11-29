@@ -8,7 +8,6 @@ import details = require('../dl_model/detail');
 import dlm = require('../dl_model/dl-manager');
 var dlManager = dlm.DlManager.getInstance();
 
-
 const PROGRESS_MAX_SIZE = Math.floor(100 / 8);
 const PROGRESS_INCOMPLETE = ['▏', '▎', '▍', '▌', '▋', '▊', '▉'];
 
@@ -76,14 +75,6 @@ function getSingleStatus(dlDetails: details.DlVars, msg?: TelegramBot.Message): 
   });
 }
 
-function getUsername(msg: TelegramBot.Message): string {
-  if (msg.from.username) {
-    return `@${msg.from.username}`;
-  } else {
-    return `<a href="tg://user?id=${msg.from.id}">${msg.from.first_name}</a>`;
-  }
-}
-
 interface StatusAll {
   message: string;
   totalDownloadCount: number;
@@ -140,7 +131,7 @@ export function getStatusMessage(): Promise<StatusAll> {
  * @param {any[]} files The list of files in the download
  * @returns {StatusMessage} An object containing a printable status message and the file name
  */
-export function generateStatusMessage(totalLength: number, completedLength: number, speed: number, tgUsername: string,
+export function generateStatusMessage(totalLength: number, completedLength: number, speed: number,
   files: any[], isUploading: boolean): StatusMessage {
   var filePath = filenameUtils.findAriaFilePath(files);
   var fileName = filenameUtils.getFileNameFromPath(filePath.path, filePath.inputPath, filePath.downloadUri);
@@ -154,9 +145,8 @@ export function generateStatusMessage(totalLength: number, completedLength: numb
   var progressString = generateProgress(progress);
   var speedStr = formatSize(speed);
   var eta = downloadETA(totalLength, completedLength, speed);
-  var user = details(tgUsername);
-  var type = isUploading ? '📤Uploading' : '📥Downloading';
-  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Size</b>: <code>${totalLengthStr}</code> | <b>Speed</b>: <code>${speedStr}ps</code> | <b>ETA</b>: <code>${eta}</code>\n<b>Seed By</b>:{user}`;
+  var type = isUploading ? '📤 Uploading' : '📥 Downloading';
+  var message = `<b>${type}</b>: <code>${fileName}</code>\n<b>Progress</b>: <code>${progressString}</code>\n<b>Size</b>: <code>${totalLengthStr}</code> | <b>Speed</b>: <code>${speedStr}ps</code> | <b>ETA</b>: <code>${eta}</code>\n<b>Seed By</b>:`;
   var status = {
     message: message,
     filename: fileName,
