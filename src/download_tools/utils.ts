@@ -40,6 +40,14 @@ function downloadETA(totalLength: number, completedLength: number, speed: number
   }
 }
 
+function getUsername(msg: TelegramBot.Message): string {
+  if (msg.from.username) {
+    return `@${msg.from.username}`;
+  } else {
+    return `<a href="tg://user?id=${msg.from.id}">${msg.from.first_name}</a>`;
+  }
+}
+
 interface StatusSingle {
   message: string;
   filename?: string;
