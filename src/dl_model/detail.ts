@@ -9,7 +9,6 @@ export class DlVars {
   gid: string;
   tgUsername: string;
   readonly tgFromId: number;
-  readonly tgUsername: string;
   readonly tgRepliedUsername: string;
   readonly tgChatId: number;
   readonly tgMessageId: number;
