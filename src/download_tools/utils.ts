@@ -76,6 +76,14 @@ function getSingleStatus(dlDetails: details.DlVars, msg?: TelegramBot.Message): 
   });
 }
 
+function getUsername(msg: TelegramBot.Message): string {
+  if (msg.from.username) {
+    return `@${msg.from.username}`;
+  } else {
+    return `<a href="tg://user?id=${msg.from.id}">${msg.from.first_name}</a>`;
+  }
+}
+
 interface StatusAll {
   message: string;
   totalDownloadCount: number;
