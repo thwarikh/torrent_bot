@@ -132,7 +132,7 @@ export function getStatusMessage(): Promise<StatusAll> {
  * @param {any[]} files The list of files in the download
  * @returns {StatusMessage} An object containing a printable status message and the file name
  */
-export function generateStatusMessage(totalLength: number, completedLength: number, speed: number,
+export function generateStatusMessage(totalLength: number, completedLength: number, speed: number, tgUsername: string,
   files: any[], isUploading: boolean): StatusMessage {
   var filePath = filenameUtils.findAriaFilePath(files);
   var fileName = filenameUtils.getFileNameFromPath(filePath.path, filePath.inputPath, filePath.downloadUri);
