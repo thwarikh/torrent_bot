@@ -36,7 +36,7 @@ function setEventCallback(regexp: RegExp, regexpNoName: RegExp,
 setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.start, (msg) => {
   if (msgTools.isAuthorized(msg) < 0) {
     // msgTools.sendUnauthorizedMessage(bot, msg);
-    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent Group.\n\nYou are not Authorized to use this bot Personaly 🚫\n\nVisit https://t.me/kl_projects for more updates.', -1);
+    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit https://t.me/kl_projects for more updates.', -1);
   } else {
     msgTools.sendMessage(bot, msg,
                          'Welcome to @kltorrent Group.\n\nVisit https://t.me/kl_projects for more updates.',
@@ -320,7 +320,7 @@ function prepDownload(msg: TelegramBot.Message, match: string, isTar: boolean): 
  */
 
 function uriAdded(msg: TelegramBot.Message): any{
-  msgTools.sendMessage(bot, msg, 'URI Added 😊,\nClick /mirrorstatus to get Status.', -1);
+  msgTools.sendMessage(bot, msg, 'URI Added Successfully ✅\nTo Know Status Click /mirrorstatus \n\n#mirror', -1);
 }
 
 /**
@@ -604,9 +604,9 @@ function driveUploadCompleteCallback(err: string, gid: string, url: string, file
         var rawurl = constants.INDEX_DOMAIN + fileName ;
       }
       var indexurl = encodeURI(rawurl) ;
-      finalMessage = `GDrive Link: <a href='${url}'>${fileName}</a> (${fileSizeStr}) \n\nDo not Share Direct Link. \n\nTo Share Use: \n\n<a href='${indexurl}'>${fileName}</a>`;
+      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>💽 Size</b> : ${fileSizeStr} \n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b>Do not Share Google Drive Link ⚠️ . To Share Only Downloadable Link\n\n#uploads`;
     } else {
-      finalMessage = `GDrive Link: <a href='${url}'>${fileName}</a> \n\nDo not Share Direct Link. \n\nTo Share Use: \n\n<a href='${indexurl}'>${fileName}</a>`;
+      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b> Do not Share Google Drive Link ⚠️ .To Share Only Downloadable Link\n\n#uploads`;
     }
     cleanupDownload(gid, finalMessage, url);
     }
