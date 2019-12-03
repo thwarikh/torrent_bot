@@ -36,10 +36,10 @@ function setEventCallback(regexp: RegExp, regexpNoName: RegExp,
 setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.start, (msg) => {
   if (msgTools.isAuthorized(msg) < 0) {
     // msgTools.sendUnauthorizedMessage(bot, msg);
-    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.', -1);
+    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit @kl_projects for more updates.', -1);
   } else {
     msgTools.sendMessage(bot, msg,
-                         'Welcome to @kltorrent Group.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.\n\n#welcome',-1);
+                         'Welcome to @kltorrent Group.\n\nVisit @kl_projects for more updates.\n\n#welcome',-1);
   }
 });
 
@@ -315,11 +315,11 @@ function prepDownload(msg: TelegramBot.Message, match: string, isTar: boolean): 
 /**
  * 
  * Added mirror function
- * send a added mirror msg --- added by @aryanvikash
+ * send a added mirror msg --- added 
  */
 
 function uriAdded(msg: TelegramBot.Message): any{
-  msgTools.sendMessage(bot, msg, 'Your URI Added Successfully ✅\nTo Know Your URI Status Click /mirrorstatus \n\n#mirror', -1);
+  msgTools.sendMessage(bot, msg, 'Your URI Added Successfully ✅\n\nClick /mirrorstatus To Know Your URI Status  \n\n#mirror', -1);
 }
 
 /**
