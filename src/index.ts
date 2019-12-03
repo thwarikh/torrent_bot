@@ -36,10 +36,10 @@ function setEventCallback(regexp: RegExp, regexpNoName: RegExp,
 setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.start, (msg) => {
   if (msgTools.isAuthorized(msg) < 0) {
     // msgTools.sendUnauthorizedMessage(bot, msg);
-    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit https://t.me/kl_projects for more updates.', -1);
+    msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.', -1);
   } else {
     msgTools.sendMessage(bot, msg,
-                         'Welcome to @kltorrent Group.\n\nVisit https://t.me/kl_projects for more updates.',
+                         'Welcome to @kltorrent Group.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.\n\n#welcome',
                          -1);
   }
 });
@@ -320,7 +320,7 @@ function prepDownload(msg: TelegramBot.Message, match: string, isTar: boolean): 
  */
 
 function uriAdded(msg: TelegramBot.Message): any{
-  msgTools.sendMessage(bot, msg, 'URI Added Successfully ✅\nTo Know Status Click /mirrorstatus \n\n#mirror', -1);
+  msgTools.sendMessage(bot, msg, 'Your URI Added Successfully ✅\nTo Know Your URI Status Click /mirrorstatus \n\n#mirror', -1);
 }
 
 /**
@@ -476,7 +476,7 @@ function ariaOnDownloadStop(gid: string, retry: number): void {
   var dlDetails = dlManager.getDownloadByGid(gid);
   if (dlDetails) {
     console.log(`${gid}: Stopped`);
-    var message = 'Download stopped.';
+    var message = '<b>Download stopped 🗑.</b>\n\n<b>Reason : </b> <code> Cancel By User</code>\n#Stopped';
     if (dlDetails.isDownloadAllowed === 0) {
       message += ' Blacklisted file name.';
     }
@@ -604,9 +604,9 @@ function driveUploadCompleteCallback(err: string, gid: string, url: string, file
         var rawurl = constants.INDEX_DOMAIN + fileName ;
       }
       var indexurl = encodeURI(rawurl) ;
-      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>💽 Size</b> : ${fileSizeStr} \n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b>Do not Share Google Drive Link ⚠️ . To Share Only Downloadable Link\n\n#uploads`;
+      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>💽 Size</b> : ${fileSizeStr} \n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b>Do not Share Google Drive Link ⚠️ . To Share Only Downloadable Link\n\n#uploaded`;
     } else {
-      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b> Do not Share Google Drive Link ⚠️ .To Share Only Downloadable Link\n\n#uploads`;
+      finalMessage = `<b>File Upload Successfully. ☁️</b>\n\n<b>💾 File Name</b> : <code>${fileName}</code>\n\n<b>📤 GDrive Link</b> : ${url}\n\n<b>📥 Downloadable Link</b> : ${indexurl} \n\n<b>NB:</b> Do not Share Google Drive Link ⚠️ .To Share Only Downloadable Link\n\n#uploaded`;
     }
     cleanupDownload(gid, finalMessage, url);
     }
