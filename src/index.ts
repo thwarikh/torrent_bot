@@ -39,8 +39,7 @@ setEventCallback(eventRegex.commandsRegex.start, eventRegex.commandsRegexNoName.
     msgTools.sendMessage(bot, msg, 'Welcome to @kltorrent_bot 🤖 .\n\nYou are not Authorized to use this bot Personaly.🚫\nJoin @Kltorrent For Access Me.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.', -1);
   } else {
     msgTools.sendMessage(bot, msg,
-                         'Welcome to @kltorrent Group.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.\n\n#welcome',
-                         -1);
+                         'Welcome to @kltorrent Group.\n\nVisit <a href=https://t.me/kl_projects>KL_Projects</a> for more updates.\n\n#welcome',-1);
   }
 });
 
