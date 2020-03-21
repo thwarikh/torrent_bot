@@ -1,8 +1,8 @@
 module.exports = Object.freeze({
-  TOKEN: '923360693:AAGv2TSf9oHnSRHqfp6e8vbtN0UbBYORFgs', //required
+  TOKEN: '823768992:AAFT6-V4LF1nPHH1jejxC7NcA13dzLFWcn8', //required
   ARIA_SECRET: 'bhadoo', //change as per needs.
   ARIA_DOWNLOAD_LOCATION: '/app/downloads)', //-leave as it is
-  INDEX_DOMAIN: 'https://drive.kltorrent.workers.dev/Torrent_bot/', // replace with your index domain. use https://github.com/ParveenBhadooOfficial/go-drive
+  INDEX_DOMAIN: 'https://gdrive.klprojects.tech/Torrent_bot/', // replace with your index domain. use https://github.com/ParveenBhadooOfficial/go-drive
   ARIA_DOWNLOAD_LOCATION_ROOT: '/', //The mountpoint that contains ARIA_DOWNLOAD_LOCATION -leave as it is
   ARIA_FILTERED_DOMAINS: [], // Prevent downloading from URLs containing these substrings -leave as it is
   ARIA_FILTERED_FILENAMES: [], // Files/top level directories with these substrings in the filename won't be downloaded -leave as it is
@@ -23,7 +23,7 @@ module.exports = Object.freeze({
   },
     COMMANDS_USE_BOT_NAME: {
       ENABLED: true,  // If true, all commands except '/list' has to have the bot username after the command.
-      NAME: "@kltorrent_bot" //Enter your Bot Username here if above is set to true.
+      NAME: " @Tg2link_bot" //Enter your Bot Username here if above is set to true.
     }
 });
 
